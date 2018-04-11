@@ -11,13 +11,13 @@
 
     $i=0;
 
-    $result=mysql_query($sql);
+    $result=mysqli_query($conn,$sql);
 
-    while ($row=mysql_fetch_assoc($result)) {
+    while ($row=mysqli_fetch_assoc($result)) {
 
     	$city=$city."{cid:".$row['cid'].",cname:'".$row['cname']."'}";
 
-    	if (mysql_num_rows($result)!=++$i) {
+    	if (mysqli_num_rows($result)!=++$i) {
     		$city=$city.'';//如果不是最后一条记录
     	}
     }

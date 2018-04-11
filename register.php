@@ -17,9 +17,9 @@
   		
   		$sql="select * from user where username='$username'";
 
-  		$result=mysql_query($sql);
+  		$result=mysqli_query($conn,$sql);
 
-  		if (mysql_num_rows($result)==0) {
+  		if (mysqli_num_rows($result)==0) {
 
   			echo "用户名可用";
 
@@ -35,13 +35,13 @@
 
         $password=$_POST['password'];
 
-        $result=mysql_query("select * from user where username='$username'");
+        $result=mysqli_query($conn,"select * from user where username='$username'");
 
-        if (mysql_num_rows($result)==0) {//不存在则注册
+        if (mysqli_num_rows($result)==0) {//不存在则注册
 
   		  	$sql="insert into user (username,password) values ('$username','$password')";
   				
-  			  mysql_query($sql);
+  			  mysqli_query($conn,$sql);
         }
         //保证username有值
         // $result=mysql_query("select * from user where username='$username'");

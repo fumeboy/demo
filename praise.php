@@ -34,11 +34,13 @@
 
          $sql="select * from praise order by id desc";
 
-         $result=mysql_query($sql);
+         $result=mysqli_query($conn,$sql);
 
-         if (mysql_num_rows($result)>0) {
+         $rowcount=mysqli_num_rows($result);
+
+         if ($rowcount>0) {
   	 	
-	  	 	while ($row=mysql_fetch_assoc($result)) {
+	  	 	while ($row=mysqli_fetch_assoc($result)) {
 	  	?> 	    
 	  	 	    <li>
 

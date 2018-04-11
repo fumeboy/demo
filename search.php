@@ -7,11 +7,11 @@
 
   $sql="select * from link where id=$id";//根据id进行查询
 
-  $result=mysql_query($sql);
+  $result=mysqli_query($conn,$sql);
 
-  if (mysql_num_rows($result)>0) {
+  if (mysqli_num_rows($result)>0) {
 
-  	while ($row=mysql_fetch_assoc($result)) {
+  	while ($row=mysqli_fetch_assoc($result)) {
 
   		echo "<li>编号:".$row['id']."</li>";
 
